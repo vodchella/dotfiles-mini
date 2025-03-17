@@ -1,7 +1,7 @@
 function fish_ssh_agent
-    if not set -q SSH_AUTH_SOCK
-        set -Ux SSH_AUTH_SOCK (mktemp -u /tmp/ssh-agent.sock.XXXXXXXXXX)
-        ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-        ssh-add /root/.ssh/id_rsa
+    if not pgrep -u (whoami) ssh-agent > /dev/null
+        eval (ssh-agent -c) &> /dev/null
+        ssh-add /root/.ssh/id_rsa &> /dev/null
+        ssh-add /root/.ssh/vpn_srv &> /dev/null
     end
 end
