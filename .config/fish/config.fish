@@ -15,7 +15,7 @@ fish_ssh_agent
 fzf --fish | source
 
 if status is-interactive
-    if not set -q ZELLIJ
+    if not set -q ZELLIJ; and not set -q SSS_TTY
         zellij
     end
 end
