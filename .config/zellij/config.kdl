@@ -136,7 +136,6 @@ keybinds clear-defaults=true {
         bind "Alt i" { MoveTab "left"; }
         bind "Alt n" { NewPane; }
         bind "Alt o" { MoveTab "right"; }
-        bind "Ctrl c" { Quit; }
     }
     shared_except "locked" "move" {
         bind "Ctrl h" { SwitchToMode "move"; }
@@ -159,6 +158,9 @@ keybinds clear-defaults=true {
     }
     shared_except "locked" "scroll" "search" {
         bind "Ctrl s" { SwitchToMode "scroll"; }
+    }
+    shared_except "locked" "scroll" "entersearch" "search" "renametab" "renamepane" {
+        bind "Ctrl c" { Quit; }
     }
     shared_except "locked" "tab" {
         bind "Ctrl t" { SwitchToMode "tab"; }
@@ -239,6 +241,7 @@ keybinds clear-defaults=true {
 // Plugin aliases - can be used to change the implementation of Zellij
 // changing these requires a restart to take effect
 plugins {
+    about location="zellij:about"
     compact-bar location="zellij:compact-bar"
     configuration location="zellij:configuration"
     filepicker location="zellij:strider" {
@@ -436,4 +439,18 @@ attach_to_session true
 // Default: true (if the host terminal supports it)
 // 
 // support_kitty_keyboard_protocol false
-
+ 
+// Whether to stack panes when resizing beyond a certain size
+// Default: true
+// 
+// stacked_resize false
+ 
+// Whether to show tips on startup
+// Default: true
+// 
+show_startup_tips false
+ 
+// Whether to show release notes on first version run
+// Default: true
+// 
+// show_release_notes false
