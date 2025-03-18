@@ -21,8 +21,12 @@ return require('packer').startup(function(use)
 
     -- Look and feel
     use 'machakann/vim-highlightedyank'
+    use 'morhetz/gruvbox'
     use 'ap/vim-css-color'
     use 'kyazdani42/nvim-web-devicons'
+
+    -- Highlighting
+    use 'nvim-treesitter/nvim-treesitter'
 
     -- Widgets
     use 'nvim-lualine/lualine.nvim'
@@ -34,4 +38,5 @@ return require('packer').startup(function(use)
     if packer_bootstrap then
       require('packer').sync()
     end
+
 end)

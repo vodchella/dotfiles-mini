@@ -28,6 +28,10 @@ set.clipboard = 'unnamedplus'
 set.cursorline = true
 set.scrolloff = 5
 
+
+vim.opt.termguicolors = true
+vim.cmd[[colorscheme gruvbox]]
+
 -- vim.cmd [[silent! colorscheme gruvbox]]
 
 -- vim.notify = require("notify")
